@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 import configApp from './config';
-
-dotenv.config();
+import logger from './utils/logger';
 
 const httpServer = configApp(express());
 
