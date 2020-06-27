@@ -7,5 +7,5 @@ import logger from './utils/logger';
 const httpServer = configApp(express());
 
 httpServer.listen(3000, () => {
-  console.log('server booted on port 3000');
+  logger.log('server booted on port 3000');
 });
