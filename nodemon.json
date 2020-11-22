@@ -7,7 +7,8 @@
   },
   "watch": ["src/"],
   "env": {
-    "NODE_ENV": "development"
+    "NODE_ENV": "development",
+    "SECRET_KEY": "JWT_SECRET"
   },
   "ext": "js,json,ts"
 }
