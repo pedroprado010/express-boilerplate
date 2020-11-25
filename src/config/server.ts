@@ -6,7 +6,7 @@ import authRouter from '../routes/auth';
 import profileRouter from '../routes/profile';
 import http, { Server } from 'http';
 
-export default function configureApp(app: Express): Server {
+export default function configureServer(app: Express): Server {
   /**
    * Middlewares
    */
