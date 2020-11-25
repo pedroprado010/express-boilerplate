@@ -1,10 +1,12 @@
 import express, { Express } from 'express';
+import http, { Server } from 'http';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import path from 'path';
+
 import authRouter from '../routes/auth';
 import profileRouter from '../routes/profile';
-import http, { Server } from 'http';
+import errorHandler from '../middlewares/error-handler';
 
 export default function configureServer(app: Express): Server {
   /**
@@ -21,6 +23,11 @@ export default function configureServer(app: Express): Server {
   const api_prefix = '/api/v1/';
   app.use(api_prefix, authRouter);
   app.use(api_prefix, profileRouter);
+
+  /**
+   * Error handlers
+   */
+  app.use(errorHandler);
 
   /**
    * Server
