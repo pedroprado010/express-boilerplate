@@ -7,6 +7,8 @@ export function createJWT(payload: object): Promise<string> {
     jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' }, (err, token) => {
       if (err) {
         reject(err);
+      } if (!token) {
+        reject(new Error('failed to create token'))
       } else {
         resolve(token);
       }
