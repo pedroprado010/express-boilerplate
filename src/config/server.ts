@@ -28,7 +28,7 @@ export default function configureServer(app: Express): Server {
    * Error handlers
    */
   app.use(errorHandler);
-
+  app.set('x-powered-by', false);
   /**
    * Server
    */
