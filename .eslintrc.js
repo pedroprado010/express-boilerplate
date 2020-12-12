@@ -19,6 +19,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-empty-function': 1,
+    '@typescript-eslint/no-empty-interface': 0,
     'semi': ["error", "always"],
   },
 };

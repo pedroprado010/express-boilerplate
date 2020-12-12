@@ -4,11 +4,11 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import path from 'path';
 
-import authRouter from '../routes/auth';
-import profileRouter from '../routes/profile';
+import authorizationRouter from '../routes/authentication.router';
 import errorHandler from '../middlewares/error-handler';
+import connectMongodb from './connect-mongodb';
 
-export default function configureServer(app: Express): Server {
+export default async function configureServer(app: Express): Promise<Server> {
   /**
    * Middlewares
    */
@@ -21,14 +21,19 @@ export default function configureServer(app: Express): Server {
    * Routes
    */
   const api_prefix = '/api/v1/';
-  app.use(api_prefix, authRouter);
-  app.use(api_prefix, profileRouter);
+  app.use(api_prefix, authorizationRouter);
 
   /**
    * Error handlers
    */
   app.use(errorHandler);
   app.set('x-powered-by', false);
+
+  /**
+   * Database
+   */
+  await connectMongodb();
+
   /**
    * Server
    */

@@ -28,3 +28,10 @@ export function verifyJWT<T>(token: string): Promise<T> {
     });
   });
 }
+
+const SecurityService = Object.freeze({
+  verifyJWT,
+  createJWT,
+});
+
+export default SecurityService;
