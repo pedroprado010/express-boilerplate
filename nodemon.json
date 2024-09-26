@@ -1,15 +1,10 @@
 {
-  "restartable": "rs",
-  "ignore": [".git", "node_modules/**/node_modules"],
-  "verbose": true,
-  "execMap": {
-    "ts": "node --require ts-node/register"
-  },
-  "watch": ["src/"],
-  "env": {
-    "NODE_ENV": "development",
-    "SECRET_KEY": "JWT_SECRET",
-    "MONGODB_URI": "mongodb://root:example@localhost:27017/test?authSource=admin"
-  },
-  "ext": "js,json,ts"
+  "watch": [
+    "src"
+  ],
+  "ext": "ts,json",
+  "ignore": [
+    "src/**/*.spec.ts"
+  ],
+  "exec": "ts-node ./src/index.ts"
 }

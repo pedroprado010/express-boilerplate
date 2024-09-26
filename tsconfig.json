@@ -1,23 +1,13 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "target": "es2016",
     "module": "commonjs",
+    "outDir": "./dist",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es6",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "paths": {
-      "*": [
-        "node_modules/*",
-        "src/types/*"
-      ]
-    }
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": ["dist"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts"]
 }
