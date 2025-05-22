@@ -15,7 +15,8 @@ export default [
     rules: {
       'indent': ['error', 2],
       '@stylistic/ts/indent': ['error', 2],
-      '@stylistic/ts/semi': ['error', 'always']
+      '@stylistic/ts/semi': ['error', 'always'],
+      '@stylistic/ts/quotes': ['error', 'single']
     }
   }
 ];
