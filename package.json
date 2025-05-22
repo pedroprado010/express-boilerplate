@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "start": "nodemon --import ./register-ts-node.js src/index.ts",
     "test": "vitest",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
