@@ -8,7 +8,8 @@
     "start": "nodemon --import ./register-ts-node.js src/index.ts",
     "test": "vitest",
     "lint": "eslint",
-    "build": "tsc"
+    "build": "tsc",
+    "initdb": "node --import ./register-ts-node.js scripts/initdb.ts"
   },
   "keywords": [],
   "author": "",
@@ -23,9 +24,13 @@
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.4"
+    "vitest": "^3.1.4",
+    "yaml": "^2.8.0"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "knex": "^3.1.0",
+    "pg": "^8.16.0"
   }
 }

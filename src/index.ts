@@ -1,3 +1,10 @@
-import { app } from './server.js';
+import { config } from 'dotenv';
 
-app.listen(1234);
+config();
+
+let app;
+
+import('./server.js').then(async (server) => {
+  app = server.app;
+  app.listen(1234);
+});
